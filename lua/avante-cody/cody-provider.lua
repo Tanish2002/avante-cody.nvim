@@ -262,7 +262,7 @@ function CodyProvider.parse_response(_, ctx, data_stream, event_state, opts)
     local stopReason = json.stopReason
     local usage = json.usage
 
-    if delta ~= nil and delta ~= "" then
+    if delta ~= nil and delta ~= "" and opts.on_chunk then
         opts.on_chunk(delta)
     end
 
